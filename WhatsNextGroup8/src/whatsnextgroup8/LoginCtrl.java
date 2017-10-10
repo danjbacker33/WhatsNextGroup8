@@ -11,4 +11,9 @@ package whatsnextgroup8;
  */
 public class LoginCtrl {
     
+    public LoginCtrl()
+    {
+        UserList aUserList = new UserList();
+        
+    }
 }

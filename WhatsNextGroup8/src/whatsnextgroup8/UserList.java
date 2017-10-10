@@ -5,10 +5,22 @@
  */
 package whatsnextgroup8;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Laura
  */
 public class UserList {
+ 
+    ArrayList<User> theList;
+    public UserList()
+    {
+        theList = new ArrayList();
+    }
     
+    public void addUsers(User user)
+    {
+        theList.add(user);
+    }
 }
