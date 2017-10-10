@@ -9,6 +9,6 @@ package whatsnextgroup8;
  *
  * @author Laura
  */
-public class NavCntl {
+public class NavCtrl {
     
 }
