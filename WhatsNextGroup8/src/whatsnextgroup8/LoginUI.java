@@ -9,10 +9,15 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
 import javax.swing.*;
+import java.awt.Event.*;
+import java.awt.event.ActionListener;
 
 public class LoginUI extends JFrame{
-    
-    public LoginUI() {
+    private JButton loginButton;
+    private LoginCtrl aLoginCtrl;
+    public LoginUI(LoginCtrl theLoginCtrl) {
+        aLoginCtrl = theLoginCtrl;
+        
         setSize(600,600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
@@ -40,7 +45,7 @@ public class LoginUI extends JFrame{
         JTextField usernameTextField = new JTextField(20);
         JTextField passwordField = new JTextField(20);
         
-        JButton loginButton = new JButton("LOG IN!");
+        loginButton = new JButton("LOG IN!");
             //loginButton.setBackground(Color.BLUE);
             //loginButton.setFont(new Font("Serif", 50, 50));
         JButton  newUserButton = new JButton("Create a new account");
@@ -56,4 +61,7 @@ public class LoginUI extends JFrame{
         revalidate();
         
     }
+        public void addLoginButtonListener(ActionListener al){
+            loginButton.addActionListener(al);
+        }
 }
