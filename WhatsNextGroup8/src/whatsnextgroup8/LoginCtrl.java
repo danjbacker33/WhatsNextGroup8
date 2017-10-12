@@ -5,6 +5,8 @@
  */
 package whatsnextgroup8;
 
+import java.awt.event.ActionListener;
+import java.awt.event.*;
 /**
  *
  * @author mattb
@@ -18,8 +20,14 @@ public class LoginCtrl {
     public LoginCtrl()
     {
         aUserList = new UserList();
-        aLoginUI = new LoginUI();
+        aLoginUI = new LoginUI(this);
         aLoginUI.setVisible(true);
+        
+        class ButtonListener implements ActionListener {
+            public void actionPerformed(ActionEvent e) {
+                
+            }
+        }
     }
     
     public boolean requestAuthenticate(String username, String password)
