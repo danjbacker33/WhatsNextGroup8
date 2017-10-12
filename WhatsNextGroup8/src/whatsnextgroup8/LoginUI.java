@@ -10,8 +10,9 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import javax.swing.*;
 
-public class LoginUI {
-    public static void LoginUI() {
+public class LoginUI extends JFrame{
+    
+    public LoginUI() {
         JFrame loginFrame = new JFrame("Welcome to What's Next!");
         loginFrame.setSize(600,600);
         loginFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

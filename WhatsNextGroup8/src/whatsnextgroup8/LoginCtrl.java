@@ -11,9 +11,32 @@ package whatsnextgroup8;
  */
 public class LoginCtrl {
     
+    private UserList aUserList;
+    private LoginUI aLoginUI;
+    private NavCtrl aNavCtrl;
+    
     public LoginCtrl()
     {
-        UserList aUserList = new UserList();
-        
+        aUserList = new UserList();
+        aLoginUI = new LoginUI();
+        aLoginUI.setVisible(true);
     }
+    
+    public boolean requestAuthenticate(String username, String password)
+    {
+        for(User u:aUserList.getTheList())
+        {
+            if(username.equals(u.getUsername()))
+            {
+                if(password.equals(u.getPassword()))
+                {
+                    aNavCtrl = new NavCtrl();
+                    return true;
+                }
+            }
+        }
+        
+        return false;
+    }
+    
 }

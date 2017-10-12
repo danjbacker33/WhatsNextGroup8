@@ -11,4 +11,10 @@ package whatsnextgroup8;
  */
 public class NavCtrl {
     
+    NavUI aNavUI;
+    public NavCtrl()
+    {
+        aNavUI = new NavUI();
+        //aNavUI.setVisible(true);
+    }
 }

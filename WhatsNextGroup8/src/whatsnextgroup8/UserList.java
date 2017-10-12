@@ -13,14 +13,29 @@ import java.util.ArrayList;
  */
 public class UserList {
  
-    ArrayList<User> theList;
+    private ArrayList<User> theList;
     public UserList()
     {
         theList = new ArrayList();
+        
+        // This is a test list, will be deleted l8r
+        User user1 = new User("Test", "Test");
+        User user2 = new User("testUse", "password");
+        User user3 = new User("ihavealongusername", "ihaveanevenlongerpassword");
+        
+        theList. add(user1);
+        theList. add(user2);
+        theList. add(user3);
+        
     }
     
     public void addUsers(User user)
     {
-        theList.add(user);
+        getTheList().add(user);
     }
+
+    public ArrayList<User> getTheList() {
+        return theList;
+    }
+
 }
