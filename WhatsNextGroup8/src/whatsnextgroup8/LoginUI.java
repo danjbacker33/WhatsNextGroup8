@@ -13,22 +13,21 @@ import javax.swing.*;
 public class LoginUI extends JFrame{
     
     public LoginUI() {
-        JFrame loginFrame = new JFrame("Welcome to What's Next!");
-        loginFrame.setSize(600,600);
-        loginFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(600,600);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         
         JPanel loginPanel = new JPanel();
         loginPanel.setBackground(Color.BLACK);
-        loginFrame.validate();
-        loginFrame.add(loginPanel);
-        loginFrame.setVisible(true);
-        loginFrame.setResizable(true);
+        validate();
+        add(loginPanel);
+        setVisible(true);
+        setResizable(true);
         
         GridLayout panelLayout = new GridLayout(0,1);
         loginPanel.setLayout(panelLayout);
         
-        JLabel welcomeLabel = new JLabel("Welcome to What's Next");
+        JLabel welcomeLabel = new JLabel("Welcome to What's Next!");
             welcomeLabel.setForeground(Color.WHITE);
             welcomeLabel.setFont(new Font("Serif", 40, 40));
         JLabel usernameLabel = new JLabel("Enter username:");
@@ -54,7 +53,7 @@ public class LoginUI extends JFrame{
         loginPanel.add(loginButton);
         loginPanel.add(newUserButton);
         
-        loginFrame.revalidate();
+        revalidate();
         
     }
 }
