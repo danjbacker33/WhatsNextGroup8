@@ -7,38 +7,49 @@ package whatsnextgroup8;
 
 import java.awt.event.ActionListener;
 import java.awt.event.*;
+import javax.swing.JButton;
 /**
  *
  * @author mattb
  */
 public class LoginCtrl {
     
-    private UserList aUserList;
-    private LoginUI aLoginUI;
-    private NavCtrl aNavCtrl;
+    private UserList userList;
+    private LoginUI loginUI;
+    private NavCtrl navCtrl;
+    private User user;
     
-    public LoginCtrl()
+    public LoginCtrl(User user, LoginUI loginUI)
     {
-        aUserList = new UserList();
-        aLoginUI = new LoginUI(this);
-        aLoginUI.setVisible(true);
+        this.userList = new UserList();
+        this.loginUI = loginUI;
+        loginUI.setVisible(true);
         
         class ButtonListener implements ActionListener {
             public void actionPerformed(ActionEvent e) {
-                
+                JButton clickSource = (JButton)e.getSource();
+                if(clickSource == loginUI.loginButton) {
+                    loginUI.setUsername();
+                    loginUI.setPassword();
+                }
+                if(clickSource == loginUI.newUserButton) {
+                    
+                }
             }
         }
+        loginUI.addLoginButtonListener(new ButtonListener());
+        loginUI.addNewUserButtonListener(new ButtonListener());
     }
     
     public boolean requestAuthenticate(String username, String password)
     {
-        for(User u:aUserList.getTheList())
+        for(User u:userList.getTheList())
         {
             if(username.equals(u.getUsername()))
             {
                 if(password.equals(u.getPassword()))
                 {
-                    aNavCtrl = new NavCtrl();
+                    navCtrl = new NavCtrl();
                     return true;
                 }
             }

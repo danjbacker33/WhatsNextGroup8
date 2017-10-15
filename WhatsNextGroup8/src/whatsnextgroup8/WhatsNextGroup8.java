@@ -5,17 +5,12 @@
  */
 package whatsnextgroup8;
 
-/**
- *
- * @author Daniel
- */
 public class WhatsNextGroup8 {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        LoginCtrl aLoginCtrl = new LoginCtrl();
+        User user = new User();
+        LoginUI loginUI= new LoginUI(user);
+        LoginCtrl aLoginCtrl = new LoginCtrl(user, loginUI);
     }
     
 }

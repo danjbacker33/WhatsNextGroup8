@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package whatsnextgroup8;
 
 import java.awt.Color;
@@ -13,11 +8,21 @@ import java.awt.Event.*;
 import java.awt.event.ActionListener;
 
 public class LoginUI extends JFrame{
-    private JButton loginButton;
-    private LoginCtrl aLoginCtrl;
-    public LoginUI(LoginCtrl theLoginCtrl) {
-        aLoginCtrl = theLoginCtrl;
+    private User user;
+    private JLabel welcomeLabel;
+    private JLabel usernameLabel;
+    private JLabel passwordLabel;
+    private JTextField usernameField;
+    private JTextField passwordField;
+    JButton loginButton;
+    JButton newUserButton;
+    private String username;
+    private String password;
+    
+    public LoginUI(User user) {        
+        this.user = user;
         
+        setTitle("What's Next");
         setSize(600,600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
@@ -32,27 +37,25 @@ public class LoginUI extends JFrame{
         GridLayout panelLayout = new GridLayout(0,1);
         loginPanel.setLayout(panelLayout);
         
-        JLabel welcomeLabel = new JLabel("Welcome to What's Next!");
+        welcomeLabel = new JLabel("Welcome to What's Next!");
             welcomeLabel.setForeground(Color.WHITE);
             welcomeLabel.setFont(new Font("Serif", 40, 40));
-        JLabel usernameLabel = new JLabel("Enter username:");
+        usernameLabel = new JLabel("Enter username:");
             usernameLabel.setForeground(Color.WHITE);
             usernameLabel.setFont(new Font("Serif", 30, 30));
-        JLabel passwordLabel = new JLabel("Enter password:");
+        passwordLabel = new JLabel("Enter password:");
             passwordLabel.setForeground(Color.WHITE);
             passwordLabel.setFont(new Font("Serif", 30, 30));
         
-        JTextField usernameTextField = new JTextField(20);
-        JTextField passwordField = new JTextField(20);
+        usernameField = new JTextField(20);
+        passwordField = new JTextField(20);
         
         loginButton = new JButton("LOG IN!");
-            //loginButton.setBackground(Color.BLUE);
-            //loginButton.setFont(new Font("Serif", 50, 50));
-        JButton  newUserButton = new JButton("Create a new account");
+        newUserButton = new JButton("Create a new account");
         
         loginPanel.add(welcomeLabel);
         loginPanel.add(usernameLabel);
-        loginPanel.add(usernameTextField);
+        loginPanel.add(usernameField);
         loginPanel.add(passwordLabel);
         loginPanel.add(passwordField);
         loginPanel.add(loginButton);
@@ -63,5 +66,26 @@ public class LoginUI extends JFrame{
     }
         public void addLoginButtonListener(ActionListener al){
             loginButton.addActionListener(al);
+        }
+        
+        public void addNewUserButtonListener(ActionListener al) {
+            newUserButton.addActionListener(al);
+        }
+        
+        public void setUsername() {
+            username = usernameField.getText();
+            //User.setUsername(username);
+        }
+        public String getUsername() {
+            //this.username = User.getUsername();
+            return this.username;            
+        }
+        public void setPassword() {
+            password = passwordField.getText();
+            //User.setPassword(password);
+        }
+        public String getPassword() {
+            //this.password = User.getPassword();
+            return this.password;
         }
 }
