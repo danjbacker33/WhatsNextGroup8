@@ -19,13 +19,13 @@ public class UserList {
         theList = new ArrayList();
         
         // This is a test list, will be deleted l8r
-        /*User user1 = new User("Test", "Test");
+        User user1 = new User("Test", "Test");
         User user2 = new User("testUse", "password");
         User user3 = new User("ihavealongusername", "ihaveanevenlongerpassword");
         
         theList. add(user1);
         theList. add(user2);
-        theList. add(user3);*/
+        theList. add(user3);
         
     }
     

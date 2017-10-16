@@ -15,6 +15,6 @@ public class NavCtrl {
     public NavCtrl()
     {
         aNavUI = new NavUI();
-        //aNavUI.setVisible(true);
+        aNavUI.setVisible(true);
     }
 }

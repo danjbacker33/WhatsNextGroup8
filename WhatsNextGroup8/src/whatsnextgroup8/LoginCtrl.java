@@ -19,18 +19,22 @@ public class LoginCtrl {
     private NavCtrl navCtrl;
     private User user;
     
-    public LoginCtrl(User user, LoginUI loginUI)
+    public LoginCtrl(LoginUI loginUI)
     {
-        this.userList = new UserList();
+        this.userList = new UserList(); // Initializes List
         this.loginUI = loginUI;
         loginUI.setVisible(true);
         
         class ButtonListener implements ActionListener {
             public void actionPerformed(ActionEvent e) {
+                System.out.println("Button Pressed");
                 JButton clickSource = (JButton)e.getSource();
                 if(clickSource == loginUI.loginButton) {
                     loginUI.setUsername();
                     loginUI.setPassword();
+                    String testU = loginUI.getUsername();   
+                    String testP = loginUI.getPassword();   
+                    System.out.println(requestAuthenticate(testU, testP));
                 }
                 if(clickSource == loginUI.newUserButton) {
                     
@@ -41,15 +45,18 @@ public class LoginCtrl {
         loginUI.addNewUserButtonListener(new ButtonListener());
     }
     
-    public boolean requestAuthenticate(String username, String password)
+    public boolean requestAuthenticate(String authUsername, String authPassword)
     {
         for(User u:userList.getTheList())
         {
-            if(username.equals(u.getUsername()))
+            if(authUsername.equals(u.getUsername()))
             {
-                if(password.equals(u.getPassword()))
+                System.out.println("Username checked");
+                if(authPassword.equals(u.getPassword()))
                 {
+                   System.out.println("Password checked"); 
                     navCtrl = new NavCtrl();
+                    loginUI.setVisible(false);
                     return true;
                 }
             }

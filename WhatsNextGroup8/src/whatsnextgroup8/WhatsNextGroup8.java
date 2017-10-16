@@ -8,9 +8,9 @@ package whatsnextgroup8;
 public class WhatsNextGroup8 {
 
     public static void main(String[] args) {
-        User user = new User();
-        LoginUI loginUI= new LoginUI(user);
-        LoginCtrl aLoginCtrl = new LoginCtrl(user, loginUI);
+        //User user = new User();
+        LoginUI loginUI= new LoginUI();
+        LoginCtrl aLoginCtrl = new LoginCtrl(loginUI);
     }
     
 }

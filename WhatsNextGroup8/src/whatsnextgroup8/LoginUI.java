@@ -19,8 +19,7 @@ public class LoginUI extends JFrame{
     private String username;
     private String password;
     
-    public LoginUI(User user) {        
-        this.user = user;
+    public LoginUI() {        
         
         setTitle("What's Next");
         setSize(600,600);

@@ -11,7 +11,7 @@ public class NavUI extends JFrame{
     JButton movieSearchButton;
     JButton logOutButton;
     
-    public void NavUI() {
+    public NavUI() {
         setTitle("What's Next");
         setSize(600,600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
